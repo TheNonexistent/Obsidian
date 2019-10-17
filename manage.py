@@ -19,7 +19,7 @@ def select(index):
     index = index - 1
     while True:
         os.system('clear')
-        print(color['BLUE'] + "[PyBlock:Chains:" + chains[index].name + "]" + color['ENDC'])
+        print(color['BLUE'] + "[Obsidian:Chains:" + chains[index].name + "]" + color['ENDC'])
         print()
         print(color['LGREEN'] + "1." + color['ENDC'] + "Add New Block")
         print(color['LGREEN'] + "2." + color['ENDC'] + "Delete Last Block")
