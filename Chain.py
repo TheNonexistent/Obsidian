@@ -15,6 +15,9 @@ class Chain:
     def add(self, data):
         self.blocks.append(Block(len(self.blocks), str(datetime.datetime.utcnow()), data, self.blocks[-1].hash))
 
+    def manualadd(self, data):
+        self.blocks.append(Block(len(self.blocks), str(datetime.datetime.utcnow()), data, self.blocks[-1].hash))
+
     def length(self):
         return len(self.blocks)
 

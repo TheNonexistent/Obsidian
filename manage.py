@@ -1,5 +1,6 @@
-import os,json,copy
+import os,json,copy,threading
 from Chain import Chain
+import network
 
 color = {
    "LBLUE" : '\033[94m',
@@ -60,8 +61,11 @@ def save():
     file.write(json.dumps(save_chain))
     file.close()
 
+    listener = threading.Thread(target=listen, args=(), daemon=True)
+
 if __name__ == "__main__":
     chains = []
+    listener.start()
     try:
         while True:
             os.system('clear')
@@ -133,5 +137,3 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         print('\n' + color['LRED'] + "Keyboard Interrupt, Aborting Commit." + color['ENDC'])
-
-
